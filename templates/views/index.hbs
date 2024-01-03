@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/weather-img.png">
+    <title>index page</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    
+</head>
+
+<body>
+    <div class="main">
+        {{>header}}
+        <p>Use this site for weather check </p>
+
+        <form action="">
+            <label for="">Want to know forcast!</label><br>
+            <input type="text" placeholder="Type Location">
+            <button>Submit</button>
+            
+        </form>
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+    </div>
+    
+    
+    {{>footer}}
+
+    
+    <script src="./Js/app.js"> //if i add script tag into header section, that case if i add any event regarding to form it will give error in browser because event will get activate before from tag comming to read by interpreter.    </script>
+</body>
+</html>
