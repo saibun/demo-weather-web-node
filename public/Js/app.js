@@ -1,4 +1,4 @@
-//console.log("client side js is loaded");
+
 
 //--------demo:- fetching an api-------
 // fetch("https://puzzle.mead.io/puzzle").then((res)=>{
