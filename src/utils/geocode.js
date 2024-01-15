@@ -1,9 +1,10 @@
 const request = require("request");
+const {geocode_key_id} = require("./key");
 
 //sacffolding
 const geo_code = {};
 geo_code.geocode = (address,callback)=>{
-    const url = "http://api.positionstack.com/v1/forward?access_key=782723b991cd9d034820ff467b6e5b81&query="+encodeURI(address)+"&limit=1";
+    const url = "http://api.positionstack.com/v1/forward?access_key="+geocode_key_id+"&query="+encodeURI(address)+"&limit=1";
 
     if(address.length > 30){
         //encodeURI make the empty address into string with length 39. no place with 39 letter exist so condition create if length more than 30 mean either given wrong place name or given nothing with node command.
