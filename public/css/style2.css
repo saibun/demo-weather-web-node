@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #37474F;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.container{
+    max-width: 750px;
+    width: 100%;
+    background-color: #232931;
+    border-radius: 25px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    gap: 1rem;
+    height: 70vh;
+    padding: 20px;
+    margin-top: 1rem;
+}
+.left-side{
+    background-color: #3D4978;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+.right-side{
+    padding: 21px;
+}
+input{
+    width: 70%;
+    padding: 0.75rem 0.95rem;
+    border: 1px solid #1294d5;
+    outline: none;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1rem;
+    font-family: inherit;
+    color: white;
+}
+#error_msg{
+    color: red;
+    font-size: 1rem;
+    font-family: inherit;
+}
+form button{
+    width: 25%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #103f62;
+    background: #499fea;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+}
+.all-info{
+    margin-top: 2rem;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0
+}
+
+

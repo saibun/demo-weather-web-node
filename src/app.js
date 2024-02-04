@@ -7,7 +7,7 @@ const geo_code = require("./utils/geocode");
 const fore_cast = require("./utils/forecast");
 
 //-------demo work of path.join----------
-log(path.join(__dirname,"../public"));
+//log(path.join(__dirname,"../public"));
 
 //----set up paths for express config------------------
 const public_path = path.join(__dirname,"../public");
@@ -24,7 +24,11 @@ app.use(express.static(public_path));
 
 //creating a route
 app.get("",(req,res)=>{
-    res.render("index.hbs",{
+    // res.render("index.hbs",{
+    //     title: "index page",
+    //     name: "saikat chatterjee"
+    // });
+    res.render("webApp.hbs",{
         title: "index page",
         name: "saikat chatterjee"
     });
@@ -97,18 +101,24 @@ app.get('/weather',(req,res)=>{
                  const location = `Country ${country}, location ${name}.`;
                 
     
-                fore_cast.forecast(latitude,longitude,(err,{localtime,tempC,weather_desc}={})=>{
+                fore_cast.forecast(latitude,longitude,(err,{localtime,country,tempC,weather_desc,humidity}={})=>{
                     if(err){
                         return res.send({err});
                     }else{
-                       // log(` localtime ${localtime}, temperature in C is ${tempC}, and weather is ${weather_desc[0]}`);
+                       //log(` localtime ${localtime},country ${country} temperature in C is ${tempC}, and weather is ${weather_desc[0]}, humidity ${humidity}`);
 
-                       const forecast_info = ` localtime ${localtime}, temperature in celcius is ${tempC}, and weather is ${weather_desc[0]}`
+                       //const forecast_info = ` localtime ${localtime}, temperature in celcius is ${tempC}, and weather is ${weather_desc[0]}`
                         return res.send({
                             address: req.query.address,
                             location,
-                            forecast_info,
+                            country,
+                            tempC,
+                            weather_desc,
+                            humidity,
+                            localtime,
                         });
+                       
+
                     }
                 })
                 
