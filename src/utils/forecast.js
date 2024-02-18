@@ -15,13 +15,6 @@ fore_cast.forecast = (latitude,longitude,callback)=>{
             callback("unable to find location! Try another ",undefined);
 
         }else{
-            // const info = {
-            //     local_time: res.body.location["localtime"],
-            //     tempC: res.body.current.temperature,
-            //     weather_desc: res.body.current.weather_descriptions[0],
-            //     country: res.body.location["country"],
-            // }
-            //--------or--------------
             const {location,current} = body;
             const {localtime, country } = location;
             const {temperature: tempC, weather_descriptions: weather_desc,humidity}=current;
